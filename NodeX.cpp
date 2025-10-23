@@ -4,4 +4,4 @@ using namespace std;
 #include <string.h>
 
 
-NodeX::NodeX(){col = nullptr; next = nullptr;}
+NodeX::NodeX(int xPosicion){x= xPosicion;col = nullptr; next = nullptr;}
