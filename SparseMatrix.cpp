@@ -62,7 +62,23 @@ using namespace std;
                 return actualY->value;}
 
         void remove(int xPos, int yPos); 
-        void printStoredValues(); 
+
+        void SparseMatrix::printStoredValues() {
+                NodeX* actualX = start;
+
+                if (actualX == nullptr) {
+                        cout << "La matriz se encuentra vacía" << endl;
+                        return;}
+
+                while (actualX != nullptr) {
+
+                        NodeY* actualY = actualX->col;
+                        while (actualY != nullptr) {
+
+                        cout << "En la cordenada x: " << actualX->x << " y en la cordenada y: " << actualY->y << " , se encuentra el valor: " << actualY->value << endl;
+                        actualY = actualY->next;}
+
+                        actualX = actualX->next;}}
         int density(); 
         SparseMatrix* multiply(SparseMatrix* second); 
 
