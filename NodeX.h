@@ -5,8 +5,9 @@ using namespace std;
 
 class NodeX {
     public:
+        int x;
         NodeY* col;
         NodeX* next;
-        NodeX();
+        NodeX(int xPosicion);
         ~NodeX(){};
 };
