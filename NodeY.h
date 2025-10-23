@@ -4,8 +4,10 @@ using namespace std;
 
 class NodeY {
     public:
+    
+        int y;
         int value;
         NodeY* next;
-        NodeY(int);
+        NodeY(int yPosicion, int val);
         ~NodeY(){};
 };
