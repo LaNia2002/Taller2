@@ -4,4 +4,4 @@ using namespace std;
 #include <string.h>
 
 
-NodeY::NodeY(int data){next = nullptr; value = data;}
+NodeY::NodeY(int yPosicion, int val){y = yPosicion;value = val;next = nullptr}
