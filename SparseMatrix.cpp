@@ -79,7 +79,37 @@ using namespace std;
                         actualY = actualY->next;}
 
                         actualX = actualX->next;}}
-        int density(); 
+
+        int SparseMatrix::density(){
+                  NodeX* actualX = start;
+                  int sizeX = 0;
+                  int sizeY = 0;
+                  int nodes = 0;
+                  if (actualX == nullptr){
+                           cout << "La matriz se encuentra vacía" << endl;
+                  return 0;}
+            
+            while (actualX != nullptr) {
+                NodeY* actualY = actualX -> col;
+                while (actualY != nullptr){
+                    if (actualY -> value != 0){
+                        nodes++;
+                    }
+                    if (actualY -> y > sizeY){
+                        sizeY = actualY -> y;
+                    }
+                    actualY = actualY -> next;
+                }
+                if (actualX -> x > sizeX){
+                    sizeX = actualX -> x;
+                }
+                actualX = actualX -> next;
+            }
+            int size = sizeY * sizeX;
+            int porcentage = (nodes/size) * 100;
+            return porcentage;
+        }
+
         SparseMatrix* multiply(SparseMatrix* second); 
 
         SparseMatrix::SparseMatrix(){start = nullptr;}
