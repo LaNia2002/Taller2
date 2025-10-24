@@ -140,8 +140,10 @@ using namespace std;
                 }
                 actualX = actualX -> next;
             }
+            sizeY++;
+            sizeX++;
             int size = sizeY * sizeX;
-            int porcentage = (nodes/size) * 100;
+            double porcentage = (double) nodes/size * 100;
             return porcentage;
         }
 
