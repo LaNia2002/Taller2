@@ -61,7 +61,42 @@ using namespace std;
 
                 return actualY->value;}
 
-        void remove(int xPos, int yPos); 
+        void SparseMatrix::remove(int xPos, int yPos) {
+
+                NodeX* actualX = start;
+                NodeX* prevX = nullptr;
+                 
+                while (actualX != nullptr && actualX->x < xPos) {
+                        prevX = actualX;
+                        actualX = actualX->next;}
+
+                if (actualX == nullptr || actualX->x != xPos){
+                        return;}
+
+                NodeY* actualY = actualX->col;
+                NodeY* prevY = nullptr;
+
+                while (actualY != nullptr && actualY->y < yPos) {
+                        prevY = actualY;
+                        actualY = actualY->next;}
+
+                if (actualY == nullptr || actualY->y != yPos){
+                        return;} 
+
+                if (prevY == nullptr){
+                        actualX->col = actualY->next;}
+                else{
+                        prevY->next = actualY->next;}
+
+                delete actualY;
+                 
+                if (actualX->col == nullptr) {
+                        if (prevX == nullptr)
+                        start = actualX->next;
+                        else
+                        prevX->next = actualX->next;
+
+                        delete actualX;}} 
 
         void SparseMatrix::printStoredValues() {
                 NodeX* actualX = start;
