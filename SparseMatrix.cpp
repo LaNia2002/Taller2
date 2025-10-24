@@ -110,7 +110,7 @@ using namespace std;
                         NodeY* actualY = actualX->col;
                         while (actualY != nullptr) {
 
-                        cout << "En la cordenada x: " << actualX->x << " y en la cordenada y: " << actualY->y << " , se encuentra el valor: " << actualY->value << endl;
+                        cout << "( " << actualX->x << ", " << actualY->y << " )" << actualY->value << endl;
                         actualY = actualY->next;}
 
                         actualX = actualX->next;}}
