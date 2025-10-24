@@ -13,5 +13,8 @@ class SparseMatrix {
         void printStoredValues(); 
         int density(); 
         SparseMatrix* multiply(SparseMatrix* second); 
+        void TestAll();
+        int getXSize();
+        int getYSize();
         ~SparseMatrix(); 
 }; 
