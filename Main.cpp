@@ -7,7 +7,7 @@ int main()
 {
   SparseMatrix* matriz = new SparseMatrix();
   int opcion = 1;
-  while (opcion != 7) {
+  while (opcion != 8) {
 
     cout<<"Menu Matriz"<<endl;
     cout<<""<<endl;
@@ -17,11 +17,12 @@ int main()
     cout<<"4) Imprimir valores almacenados"<<endl;
     cout<<"5) Calcular densidad"<<endl;
     cout<<"6) Multiplicar matrices"<<endl;
-    cout<<"7.) Salir"<<endl;
+    cout<<"7) Poner matriz por el test"<<endl;
+    cout<<"8.) Salir"<<endl;
 
     cin>>opcion;
 
-    while (opcion < 1 || opcion > 7){
+    while (opcion < 1 || opcion > 8){
           cout << "Opción inválida. Intente nuevamente." << endl;
           cin>>opcion;
       }
@@ -62,14 +63,16 @@ int main()
         if (densidad != 0) {
             cout<<"La densidad de la matriz es: "<< densidad <<"%"<<endl;
         }
+    }
 
     else if(opcion==6){
     }
+    else if(opcion == 7){
+      cout << "Testeando matriz."<< endl;
+      matriz -> TestAll();
+    }
 
   };
-  }
 
-
-  
   return 0;
 }
