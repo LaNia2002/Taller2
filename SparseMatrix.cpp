@@ -149,6 +149,79 @@ using namespace std;
 
         SparseMatrix* multiply(SparseMatrix* second); 
 
+int SparseMatrix::getXSize(){
+            NodeX* actualX = start;
+            int sizeX = 0;
+            while (actualX != nullptr) {
+                NodeY* actualY = actualX -> col;
+                if (actualX -> x > sizeX){
+                    sizeX = actualX -> x;
+                }
+                actualX = actualX -> next;
+            }
+            return sizeX;
+        }
+        
+        int SparseMatrix::getYSize(){
+            NodeX* actualX = start;
+            NodeY* actualY = actualX -> col;
+            int sizeY = 0;
+            while (actualX != nullptr) {
+                NodeY* actualY = actualX -> col;
+                while (actualY != nullptr){
+                    if (actualY -> y > sizeY){
+                        sizeY = actualY -> y;
+                    }
+                    actualY = actualY -> next;
+                }
+                actualX = actualX -> next;
+            }
+            return sizeY;
+        }
+
+        SparseMatrix::SparseMatrix(){start = nullptr;}
+        NodeX* SparseMatrix::getStart(){return start;}
+        void SparseMatrix::setStart(NodeX* inicial) {start = inicial;}
+        
+        
+        void SparseMatrix::TestAll(){
+            int datos;
+            int density;
+            int cols;
+            int fils;
+            double totalTime;
+            cout<<"Ingrese el número de datos: ";
+            std::cin >> datos;
+            cout<<"Ingrese la densidad a testear: ";
+            cin >> density;
+            while (density > 40 && density < 70){
+                cout<<"Ingrese la densidad a testear(Mayor a 70 o menor a 30): ";
+                cin >> density;
+            } 
+            if (density > 70){
+                cols = sqrt(datos) + 1;
+                fils = sqrt(datos) + 1;
+            } else if (density < 40){
+                cols = datos / 3;
+                fils = datos / 3;
+            }
+            for (int i = 1; i <= datos; i++){
+                int x = rand() % cols - 1;
+                int y = rand() % fils - 1;
+                int value = rand() % 100 + 1;
+                auto start = std::chrono::system_clock::now();
+                add(value, x, y);
+                auto final = std::chrono::system_clock::now();
+                std::chrono::duration<double> timeAdd = (final - start);
+                double ms1 = timeAdd.count() * 1000.0;
+                totalTime += ms1;
+                std::cout << "Add test " <<i<<": "<< ms1 << " ms" << std::endl;
+
+            }
+            cout << "El tiempo total de ejecución de los algoritmos es de: " << totalTime << endl;
+            
+        }
+
         SparseMatrix::SparseMatrix(){start = nullptr;}
         NodeX* SparseMatrix::getStart(){return start;}
         void SparseMatrix::setStart(NodeX* inicial) {start = inicial;}
