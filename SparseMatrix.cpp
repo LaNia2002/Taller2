@@ -226,14 +226,13 @@ int SparseMatrix::getXSize(){
                 std::cout << "Añadir test " <<i<<": "<< ms1 << " ms" << std::endl;
 
             }
-            cout << "El tiempo total de ejecución de los algoritmos es de: " << totalTime << endl;
+            cout << "El tiempo total de ejecución de los algoritmos set es de: " << totalTime << endl;
             int seguir = 0;
-            cout << "Presione 1 para probar algoritmo Get"<<endl;
+            cout << "Presione 1 para probar algoritmo Get: ";
             cin>>seguir;
             while (seguir != 1){
-                cout << "Presione 1 para probar algoritmo Get"<<endl;
+                cout << "Presione 1 para probar algoritmo Get: ";
                 cin>>seguir;
-                
             }
             
             for (int i = 1; i <= datos; i++){
