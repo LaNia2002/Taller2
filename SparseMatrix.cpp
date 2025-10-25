@@ -216,6 +216,8 @@ int SparseMatrix::getXSize(){
             for (int i = 1; i <= datos; i++){
                 int x = rand() % cols - 1;
                 int y = rand() % fils - 1;
+                coordX.push(x);
+                coordY.push(y);
                 int value = rand() % 100 + 1;
                 auto start = std::chrono::system_clock::now();
                 add(value, x, y);
