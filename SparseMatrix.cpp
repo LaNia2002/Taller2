@@ -2,6 +2,12 @@
 using namespace std;
 #include <iostream>
 #include <string.h>
+#include <cmath>
+#include <random>
+#include <chrono>
+#include <string>
+#include <stack>
+using namespace std::chrono;
 
          void SparseMatrix::add(int value, int xPos, int yPos) {
                 if (value == 0) return; 
