@@ -195,6 +195,8 @@ int SparseMatrix::getXSize(){
             int density;
             int cols;
             int fils;
+            stack<int> coordX;
+            stack<int> coordY;
             double totalTime;
             cout<<"Ingrese el número de datos: ";
             std::cin >> datos;
@@ -244,6 +246,4 @@ int SparseMatrix::getXSize(){
             
         }
 
-        SparseMatrix::SparseMatrix(){start = nullptr;}
-        NodeX* SparseMatrix::getStart(){return start;}
-        void SparseMatrix::setStart(NodeX* inicial) {start = inicial;}
+       
