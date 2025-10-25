@@ -205,7 +205,7 @@ int SparseMatrix::getXSize(){
             while (density >= 40 && density <= 70){
                 cout<<"Ingrese la densidad a testear(Mayor a 70 o menor a 30): ";
                 cin >> density;
-            } 
+            }
             if (density > 70){
                 cols = sqrt(datos) + 1;
                 fils = sqrt(datos) + 1;
