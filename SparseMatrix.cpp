@@ -227,7 +227,14 @@ int SparseMatrix::getXSize(){
 
             }
             cout << "El tiempo total de ejecución de los algoritmos es de: " << totalTime << endl;
-            cout << "-----------------------------------"<<endl;
+            int seguir = 0;
+            cout << "Presione 1 para probar algoritmo Get"<<endl;
+            cin>>seguir;
+            while (seguir != 1){
+                cout << "Presione 1 para probar algoritmo Get"<<endl;
+                cin>>seguir;
+                
+            }
             
             for (int i = 1; i <= datos; i++){
                 auto start = std::chrono::system_clock::now();
