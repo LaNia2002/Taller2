@@ -202,7 +202,7 @@ int SparseMatrix::getXSize(){
             std::cin >> datos;
             cout<<"Ingrese la densidad a testear: ";
             cin >> density;
-            while (density > 40 && density < 70){
+            while (density >= 40 && density =< 70){
                 cout<<"Ingrese la densidad a testear(Mayor a 70 o menor a 30): ";
                 cin >> density;
             } 
