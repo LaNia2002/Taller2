@@ -223,7 +223,7 @@ int SparseMatrix::getXSize(){
                 std::chrono::duration<double> timeAdd = (final - start);
                 double ms1 = timeAdd.count() * 1000.0;
                 totalTime += ms1;
-                std::cout << "Add test " <<i<<": "<< ms1 << " ms" << std::endl;
+                std::cout << "Añadir test " <<i<<": "<< ms1 << " ms" << std::endl;
 
             }
             cout << "El tiempo total de ejecución de los algoritmos es de: " << totalTime << endl;
@@ -238,7 +238,7 @@ int SparseMatrix::getXSize(){
                 std::chrono::duration<double> timeAdd = (final - start);
                 double ms1 = timeAdd.count() * 1000.0;
                 totalTime += ms1;
-                std::cout << "Add test " <<i<<": "<< ms1 << " ms" << std::endl;
+                std::cout << "Añadir test " <<i<<": "<< ms1 << " ms" << std::endl;
 
             }
             cout<< "El tiempo total de ejecución de los algoritmos get es de: " << totalTime << endl;
